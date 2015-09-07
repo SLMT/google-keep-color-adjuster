@@ -20,14 +20,16 @@ var backgroundColorClass = "IZ65Hb-TBnied";
 
 // 每秒鐘檢查一次
 var checkTimer = setInterval(checkFunction, 1000);
-console.log("Start checking...");
+//console.log("Start checking...");
 
 function checkFunction() {
 	// 檢查目標是否有出現
 	var backgrounds = document.getElementsByClassName(backgroundColorClass);
 	if (backgrounds != null) {
 		adjustColors(backgrounds);
-		clearInterval(checkTimer);
+
+		// 替換成功之後就不再檢查
+		//clearInterval(checkTimer);
 	}
 }
 
@@ -40,5 +42,5 @@ function adjustColors(backgrounds) {
 		backgrounds[i].style.backgroundColor = backgrounds[i].style.backgroundColor.replace(originalColor, newColor);
 	}
 
-	console.log("Color are adjusted.");
+	//console.log("Color are adjusted.");
 }
