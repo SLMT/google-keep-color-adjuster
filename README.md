@@ -1,6 +1,6 @@
 # Google Keep Color Adjuster
 
-一個用來調整 Google Adjuster 上便條顏色的插件
+一個用來調整 Google Keep 上便條顏色的插件
 
 ## Support Platform
 - Firefox
