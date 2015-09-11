@@ -15,9 +15,8 @@ var backgroundColorClass = "IZ65Hb-TBnied";
 var checkTimer = setInterval(checkFunction, 1000);
 //console.log("Start checking...");
 
-// 換色功能是否啟動
-// TODO: 初始值應該以現在的設定決定
-var enableAdjusting = true;
+// 換色功能是否啟動 (一開始 index.js 會送一次更新訊息來更新初始值)
+var enableAdjusting = false;
 
 function getBackgrounds() {
 	return document.getElementsByClassName(backgroundColorClass);

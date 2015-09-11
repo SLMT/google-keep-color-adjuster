@@ -20,6 +20,9 @@ tabs.on("ready", function(tab) {
         workers.add(worker);
         // console.log("Add a new worker, set size: " + workers.size);
 
+        // 先送一次狀態更新訊息更新一下 script 的初始狀態
+        notifyAdjustingStatus(worker, prefs.prefs["enableAdjusting"]);
+
         // 讓頁面 unload 時自動把自己從 set 中刪除
         worker.on("detach", function() {
             workers.delete(worker);
@@ -28,15 +31,15 @@ tabs.on("ready", function(tab) {
     }
 });
 
-// 注意 preferences 狀態
+// 監聽 preferences 狀態
 prefs.on("enableAdjusting", function(prefName) {
     // console.log("The 'enable' status has been changed to '" + prefs.prefs["enableAdjusting"] + "'");
-    notifyAdjustingStatus(prefs.prefs["enableAdjusting"]);
+    workers.forEach(function(worker) {
+        notifyAdjustingStatus(worker, prefs.prefs["enableAdjusting"]);
+    });
 });
 
 // 通知 Google Keep 頁面設定狀態更新
-function notifyAdjustingStatus(newStatus) {
-    workers.forEach(function(worker) {
-        worker.port.emit("enableAdjusting", newStatus);
-    });
+function notifyAdjustingStatus(worker, newStatus) {
+    worker.port.emit("enableAdjusting", newStatus);
 }
