@@ -9,5 +9,12 @@
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "preferences": [{
+        "name": "enableAdjusting",
+        "title": "啟動換色功能",
+        "description": "是否啟動換色功能，如果關閉的話將不會調整 Google Keep 的顏色",
+        "type": "bool",
+        "value": true
+    }]
 }
