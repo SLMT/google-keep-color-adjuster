@@ -1,0 +1,17 @@
+{
+	// Required metadata
+	"manifest_version": 2,
+
+	// Extension Info
+	"name": "Google Keep Color Adjuster",
+	"description": "A extension for adjusting the color of notes on Google Keep.",
+	"version": "0.1.0",
+
+	// 把預先寫好的 scripts 掛載到 keep.google.com
+	"content_scripts": [
+		{
+			"matches": ["http://keep.google.com/*"],
+			"js": ["data/color-adjuster.js"]
+		}
+	]
+}
