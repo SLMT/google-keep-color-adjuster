@@ -10,7 +10,7 @@
 	// 把預先寫好的 scripts 掛載到 keep.google.com
 	"content_scripts": [
 		{
-			"matches": ["http://keep.google.com/*"],
+			"matches": ["https://keep.google.com/*"], // TODO: 會不會有不是 https 的情況？
 			"js": ["data/color-adjuster.js"]
 		}
 	]
