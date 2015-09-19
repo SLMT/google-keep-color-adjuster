@@ -16,8 +16,22 @@
 	// 把預先寫好的 scripts 掛載到 keep.google.com
 	"content_scripts": [
 		{
-			"matches": ["https://keep.google.com/*"], // TODO: 會不會有不是 https 的情況？
+			"matches": ["*://keep.google.com/*"],
 			"js": ["data/color-adjuster.js"]
 		}
-	]
+	],
+
+	// Option Page
+	"options_ui": {
+		// Required.
+		"page": "options/options.html",
+		// Recommended.
+		"chrome_style": true
+	},
+
+	// 要求權限
+	"permissions": [
+		"tabs",
+        "storage"
+    ]
 }

@@ -67,3 +67,17 @@ function adjustColors(backgrounds, changedTo) {
 
 	// console.log("Adjust colors: " + changedTo);
 }
+
+// 監聽 script 啟動狀態
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+
+	// console.log("Got a request: " + message + ", status: " + message.enableAdjusting);
+
+	enableAdjusting = message.enableAdjusting;
+
+	// 強制換色
+	if (enableAdjusting)
+		adjustColors(getBackgrounds(), 1);
+	else
+		adjustColors(getBackgrounds(), -1);
+});
