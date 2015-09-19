@@ -68,16 +68,26 @@ function adjustColors(backgrounds, changedTo) {
 	// console.log("Adjust colors: " + changedTo);
 }
 
-// 監聽 script 啟動狀態
+// 檢查目前的 options 數值
+chrome.storage.sync.get({
+	enableAdjusting: true
+}, function(options) {
+	// 強制換色
+	changeEnablingStatus(options.enableAdjusting);
+});
+
+// 監聽 options 更新訊息
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-
 	// console.log("Got a request: " + message + ", status: " + message.enableAdjusting);
+	changeEnablingStatus(message.enableAdjusting);
+});
 
-	enableAdjusting = message.enableAdjusting;
-
+// 更新啟動狀態並強制換色
+function changeEnablingStatus(newStatus) {
+	enableAdjusting = newStatus;
 	// 強制換色
 	if (enableAdjusting)
 		adjustColors(getBackgrounds(), 1);
 	else
 		adjustColors(getBackgrounds(), -1);
-});
+}
