@@ -1,1 +1,8 @@
+# Firefox Add-on
 *.xpi
+
+# Chrome Extension
+*.crx
+
+# Private keys
+*.pem
