@@ -1,0 +1,37 @@
+{
+	// Required metadata
+	"manifest_version": 2,
+
+	// Extension Info
+	"name": "Google Keep Color Adjuster",
+	"description": "A extension for adjusting the color of notes on Google Keep.",
+	"version": "0.1.0",
+	"icons": {
+		"16": "icon16.png",
+		"32": "icon32.png",
+    	"64": "icon64.png",
+	    "128": "icon128.png"
+	},
+
+	// 把預先寫好的 scripts 掛載到 keep.google.com
+	"content_scripts": [
+		{
+			"matches": ["*://keep.google.com/*"],
+			"js": ["data/color-adjuster.js"]
+		}
+	],
+
+	// Option Page
+	"options_ui": {
+		// Required.
+		"page": "options/options.html",
+		// Recommended.
+		"chrome_style": true
+	},
+
+	// 要求權限
+	"permissions": [
+		"tabs",
+        "storage"
+    ]
+}
