@@ -1,0 +1,20 @@
+{
+  "title": "Google Keep Color Adjuster",
+  "name": "google-keep-color-adjuster",
+  "version": "0.2.0",
+  "description": "A add-on for adjusting the color of notes on Google Keep.",
+  "main": "index.js",
+  "author": "SLMT",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "preferences": [{
+        "name": "enableAdjusting",
+        "title": "啟動換色功能",
+        "description": "是否啟動換色功能，如果關閉的話將不會調整 Google Keep 的顏色",
+        "type": "bool",
+        "value": true
+    }]
+}

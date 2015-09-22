@@ -1,0 +1,16 @@
+body {
+	line-height: 20px;
+}
+
+.option {
+	margin: 10px;
+	font-size: 14px;
+}
+
+label {
+	font-weight: bold;
+}
+
+.buttons {
+	text-align: center;
+}

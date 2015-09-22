@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="option.css">
+		<title>My Test Extension Options</title>
+	</head>
+
+	<body>
+		<div class="option">
+			<label for="enable_check">啟動換色功能：</label>
+			<input type="checkbox" id="enable_check" name="enable_check" value="false"><br />
+			<span>是否啟動換色功能，如果關閉的話將不會調整 Google Keep 顏色</span><br />
+		</div>
+
+		<div class="buttons">
+			<button id="save_button">Save</button><br />
+			<span id="save_status"></span>
+		</div>
+
+		<script src="options.js"></script>
+	</body>
+</html>
